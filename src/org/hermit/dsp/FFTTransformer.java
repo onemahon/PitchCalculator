@@ -18,6 +18,7 @@ package org.hermit.dsp;
 
 import org.hermit.utils.Bitwise;
 
+import android.util.Log;
 import ca.uol.aig.fftpack.RealDoubleFFT;
 
 
@@ -324,6 +325,11 @@ public final class FFTTransformer {
                     wavg += spectrum[j] * (float) j;
                 }
                 wavg /= tot;
+                
+                if (wavg > 320 && wavg < 340) {
+                	Log.d("FFTTransformer", "Results list contains 330 Hz as peak");
+                }
+                
                 results[count++] = wavg;
                 
                 // Skip past this peak.

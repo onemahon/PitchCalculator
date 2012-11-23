@@ -1,4 +1,4 @@
-package com.example.pitchcalculator;
+package jdm.pitchcalculator;
 
 import java.util.EventListener;
 
@@ -80,11 +80,10 @@ public class AudioAnalyzer {
 
 		
 		spectrumAnalyser.findKeyFrequencies(spectrumData, keyPitches);
-		
 		audioDataProcessedListener.onEvent(keyPitches);
 
 	}
-	private float[] keyPitches = new float[10];
+	private float[] keyPitches = new float[50];
 
 	private DataProcessedListener audioDataProcessedListener;
 	public void setDataProcessedListener(DataProcessedListener listener) {

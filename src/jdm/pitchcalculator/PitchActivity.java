@@ -1,5 +1,6 @@
-package com.example.pitchcalculator;
+package jdm.pitchcalculator;
 
+import jdm.pitchcalculator.AudioAnalyzer.DataProcessedListener;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,27 +9,13 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.pitchcalculator.AudioAnalyzer.DataProcessedListener;
+import jdm.pitchcalculator.R;
 
 public class PitchActivity extends Activity {
 
 	private Button toggleRecording;
-//	private TextView[] pitches;
 	private boolean isRecording;
 	private boolean stopThread = false; // TODO decide when to actually break out of the listener thread
-//	private AudioReader audioReader;
-//	private FFTTransformer spectrumAnalyser;
-//	
-//	private float[] spectrumData;
-//	private float[][] spectrumHist;
-//	private int spectrumIndex;
-//	private float[] biasRange;
-//	private long audioProcessed = 0;
-//	private long audioSequence = 0;
-//	
-//	
-//	
-	
 	private AudioAnalyzer analyzer;
 		
     @Override
@@ -64,20 +51,6 @@ public class PitchActivity extends Activity {
         startAnalyzingThread();
         
         stopRecording();
-
-//        
-//        pitches = new TextView[] { (TextView) findViewById(R.id.pitch0),
-//        		(TextView) findViewById(R.id.pitch1), 
-//        		(TextView) findViewById(R.id.pitch2), 
-//        		(TextView) findViewById(R.id.pitch3), 
-//        		(TextView) findViewById(R.id.pitch4) };
-//        
-//        
-//        audioReader = new AudioReader();
-//        
-//        clearData();
-//        
-//        
     }
     
     private Thread analysisThread;
@@ -118,19 +91,6 @@ public class PitchActivity extends Activity {
         return true;
     }
     
-//    private void clearData() {
-//    	for (TextView v : pitches) {
-//			v.setText("0"+" hz");
-//		}
-//    	
-//        spectrumAnalyser = new FFTTransformer(256, Window.Function.BLACKMAN_HARRIS);
-//        spectrumData = new float[256 / 2];
-//        spectrumHist = new float[256 / 2][4];
-//        spectrumIndex = 0;
-//        
-//        biasRange = new float[2];
-//    }
-    
     private void startRecording() {
     	startAnalyzingThread();
     	
@@ -139,23 +99,6 @@ public class PitchActivity extends Activity {
     	
     	analyzer.measureStart();
     	
-    	
-//    	clearData();
-//    	
-//    	audioProcessed = audioSequence = 0;
-//    	audioReader.startReader(8000, 256 * 1, new AudioReader.Listener() {
-//			@Override
-//			public void onReadError(int error) {
-//				Log.d("PitchActivity", "Read error number "+error);
-//			}
-//			
-//			@Override
-//			public void onReadComplete(short[] buffer) {
-//				
-//			}
-//		});
-//    	
-//    	
     }
     
     private void stopRecording() {
