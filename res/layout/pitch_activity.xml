@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/toggleRecordingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start recording" />
+
+    <LinearLayout
+        android:id="@+id/pitchesOutput"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/pitch0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Main pitch"
+            android:textSize="35dp" />
+
+        <TextView
+            android:id="@+id/pitch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Second pitch"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/pitch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Third pitch"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/pitch3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fourth pitch" />
+
+        <TextView
+            android:id="@+id/pitch4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fifth pitch" />
+    </LinearLayout>
+
+</LinearLayout>
